@@ -1,13 +1,181 @@
-body {
+/* General styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #001f3d; /* Fallback dark blue color */
+  background-image: url("C:\\Users\\aser\\Desktop\\img1.avif"); /* Ensure correct local path for background image */
+  background-size: cover;
+  background-position: center;
+  color: #fff; /* White text to contrast with dark background */
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px; /* Added padding for smaller screens */
+  overflow-y: auto; /* Allow vertical scrolling */
+  min-height: 100vh; /* Ensure full height is used */
+  margin: 0;
+}
+
+/* Main container for the form */
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1.5s ease-in-out;
+  overflow: hidden;
+  max-height: 80vh; /* Ensure the container doesn't stretch beyond the screen */
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  color: #ffcc00; /* Bright yellow color for the heading */
+  font-size: 6vw; /* Responsive font size */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Shadow effect for better visibility */
+  animation: slideInFromTop 1s ease-in-out;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+h3 {
+  text-align: center;
+  color: #a9c0e1; /* Light blue color for the prediction result */
+  font-size: 4vw; /* Responsive font size for prediction */
+  margin-top: 20px;
+  animation: slideInFromBottom 1s ease-in-out;
+  word-wrap: break-word;
+  max-width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Add slight background to prediction for readability */
+  border-radius: 8px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+input, select, button {
+  padding: 12px;
+  font-size: 1.2em;
+  border: 2px solid #fff; /* Light border for inputs and buttons */
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+}
+
+/* Input field focus effect */
+input:focus, select:focus, button:focus {
+  border-color: #ffcc00; /* Highlight with yellow on focus */
+  outline: none;
+}
+
+/* Button styles */
+button {
+  background-color: #ffcc00; /* Bright yellow for buttons */
+  color: #001f3d; /* Dark text on the button */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+
+/* Input field animations */
+input, select {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+button {
+  animation: fadeInUp 0.5s ease-in-out;
+  animation-delay: 0.5s;
+}
+
+/* Animation for form inputs */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for the container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide-in from top for h2 */
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in from bottom for h3 */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer or additional info styling */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8em;
+  color: #ddd;
+}
+
+/* Optional styling for error messages */
+.error-message {
+  color: #f44336;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
 }
